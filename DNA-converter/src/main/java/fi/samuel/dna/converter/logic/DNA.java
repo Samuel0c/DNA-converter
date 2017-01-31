@@ -1,10 +1,6 @@
 
 package fi.samuel.dna.converter.logic;
 
-/**
- *
- * @author samleppi
- */
 import java.util.ArrayList;
 
 public class DNA {
@@ -22,7 +18,20 @@ public class DNA {
         return dnaBaseSequence;
     }
 
+    public int purinePercentage() {
+        int numberOfPurineBases = 0;
+        for (Base current : this.dnaBaseSequence) {
+            if (current.isPurine()) {
+                numberOfPurineBases++;
+            }
+        }
+        double percentage = (1.0 * numberOfPurineBases / this.dnaBaseSequence.size() * 100);
+        return (int) percentage;
+    }
     
+    public int pyrimidinePercentage() {
+        return 100 -this.purinePercentage();
+    }
     
     
 }
