@@ -19,17 +19,22 @@ public class DNA {
     }
 
     public int purinePercentage() {
+        if (this.dnaBaseSequence.isEmpty()) {
+            return 0;
+        }
         int numberOfPurineBases = 0;
         for (Base current : this.dnaBaseSequence) {
             if (current.isPurine()) {
                 numberOfPurineBases++;
             }
         }
-        double percentage = (1.0 * numberOfPurineBases / this.dnaBaseSequence.size() * 100);
-        return (int) percentage;
+        return (int) (1.0 * numberOfPurineBases / this.dnaBaseSequence.size() * 100);
     }
     
     public int pyrimidinePercentage() {
+        if (this.dnaBaseSequence.isEmpty()) {
+            return 0;
+        }
         return 100 -this.purinePercentage();
     }
     

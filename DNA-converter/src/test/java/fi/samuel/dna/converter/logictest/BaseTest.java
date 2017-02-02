@@ -1,21 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package fi.samuel.dna.converter.logictest;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author samleppi
- */
 import fi.samuel.dna.converter.logic.Base;
 
 public class BaseTest {
@@ -83,12 +72,5 @@ public class BaseTest {
     public void uracilHasCorrectComplementaryBase() {
         assertEquals('A', this.uracil.complementaryBase().getNucleobase());
     }
-    
 
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }
