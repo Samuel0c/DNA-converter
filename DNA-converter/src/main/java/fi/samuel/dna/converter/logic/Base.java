@@ -30,7 +30,6 @@ public class Base {
     public boolean isPurine() {
         return this.nucleobase == 'A' || this.nucleobase == 'G';
     }
-    
-    
-    
+
+   
 }

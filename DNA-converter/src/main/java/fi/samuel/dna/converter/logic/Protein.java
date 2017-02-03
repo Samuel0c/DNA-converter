@@ -5,105 +5,93 @@ import java.util.ArrayList;
 public class Protein {
 
     private ArrayList<String> aminoAcidSequence;
-    private ArrayList<Base> tRnaSequence;
+    private final ArrayList<Base> tRnaSequence;
 
     public Protein(tRNA tRNA) {
         this.aminoAcidSequence = new ArrayList<>();
-        ArrayList<Base> tRnaSequence = tRNA.gettRnaSequence();
+        this.tRnaSequence = new ArrayList<>();
+        for (Base c : tRNA.gettRnaSequence()) {
+            this.tRnaSequence.add(c);
+        }
     }
 
-    private ArrayList<String> getAminoAcidSequence() {
-        if (this.aminoAcidSequence.size() == 0) {
-            int numberOfCodons = tRnaSequence.size() - (tRnaSequence.size() % 3);
-            for (int i = 0; i < numberOfCodons; i++) {
+    public ArrayList<String> getAminoAcidSequence() {
+        if (this.aminoAcidSequence.isEmpty()) {
+            int numberOfCodons = (tRnaSequence.size() - (tRnaSequence.size() % 3)) / 3;
+            int index = 0;
+            while (numberOfCodons > 0) {
                 ArrayList<Base> currentCodon = new ArrayList<>();
                 for (int counterToThree = 1; counterToThree <= 3; counterToThree++) {
-                    currentCodon.add(tRnaSequence.get(i));
+                    currentCodon.add(tRnaSequence.get(index));
+                    index++;
                 }
                 this.aminoAcidSequence.add(codonToAminoAcid(currentCodon));
+                numberOfCodons--;
             }
         }
         return this.aminoAcidSequence;
     }
 
-    public String codonToAminoAcid(ArrayList<Base> codon) {
-        String name = "";
-        if (codon.get(0).getNucleobase() == 'U') {
-            if (codon.get(1).getNucleobase() == 'U') {
-                if (codon.get(2).getNucleobase() == 'U' || codon.get(2).getNucleobase() == 'C') {
-                    name = "Phenylalanine";
-                } else {
-                    name = "Leucine";
-                }
-            } else if (codon.get(1).getNucleobase() == 'C') {
-                name = "Serine";
-            } else if (codon.get(1).getNucleobase() == 'A') {
-                if (codon.get(2).getNucleobase() == 'U' || codon.get(2).getNucleobase() == 'C') {
-                    name = "Tyrosine";
-                } else {
-                    name = "STOP";
-                }
-            } else {
-                if (codon.get(2).getNucleobase() == 'U' || codon.get(2).getNucleobase() == 'C') {
-                    name = "Cysteine";
-                } else if (codon.get(2).getNucleobase() == 'A') {
-                    name = "STOP";
-                } else {
-                    name = "Tryptophan";
-                }
-            }
-        } else if (codon.get(0).getNucleobase() == 'C') {
-            if (codon.get(1).getNucleobase() == 'U') {
-                name = "Leucine";
-            } else if (codon.get(1).getNucleobase() == 'C') {
-                name = "Proline";
-            } else if (codon.get(1).getNucleobase() == 'A') {
-                if (codon.get(2).getNucleobase() == 'U' || codon.get(2).getNucleobase() == 'C') {
-                    name = "Histidine";
-                } else {
-                    name = "Glutamine";
-                }
-            } else {
-                name = "Arginine";
-            }
-        } else if (codon.get(0).getNucleobase() == 'A') {
-            if (codon.get(1).getNucleobase() == 'U') {
-                if (codon.get(2).getNucleobase() == 'U' || codon.get(2).getNucleobase() == 'C' || codon.get(2).getNucleobase() == 'U' || codon.get(2).getNucleobase() == 'A') {
-                    name = "Isoleucine";
-                } else {
-                    name = "Methionine";
-                }
-            } else if (codon.get(1).getNucleobase() == 'C') {
-                name = "Threonine";
-            } else if (codon.get(1).getNucleobase() == 'A') {
-                if (codon.get(2).getNucleobase() == 'U' || codon.get(2).getNucleobase() == 'C') {
-                    name = "Asparagine";
-                } else {
-                    name = "Lysine";
-                }
-            } else {
-                if (codon.get(2).getNucleobase() == 'U' || codon.get(2).getNucleobase() == 'C') {
-                    name = "Serine";
-                } else {
-                    name = "Arginine";
-                }
-            }
-        } else {
-            if (codon.get(1).getNucleobase() == 'U') {
-                name = "Valine";
-            } else if (codon.get(1).getNucleobase() == 'C') {
-                name = "Alanine";
-            } else if (codon.get(1).getNucleobase() == 'A') {
-                if (codon.get(2).getNucleobase() == 'U' || codon.get(2).getNucleobase() == 'C') {
-                    name = "Aspartic acid";
-                } else {
-                    name = "Glutamic acid";
-                }
-            } else {
-                name = "Glycine";
+    private boolean expectedNucleobases(String currentCodon, String... acceptedCodons) {
+        for (String currentAcceptedCodon : acceptedCodons) {
+            if (currentAcceptedCodon.equals(currentCodon)) {
+                return true;
             }
         }
-        return name;
+        return false;
+    }
+
+    private String codonToString(ArrayList<Base> codon) {
+        String c = "";
+        for (Base current : codon) {
+            c += current.getNucleobase();
+        }
+        return c;
+    }
+
+    private String codonToAminoAcid(ArrayList<Base> codon) {
+        String codonBaseSequence = codonToString(codon);
+        if (expectedNucleobases(codonBaseSequence, "UUU", "UUC")) {
+            return "Phenylalanine";
+        } else if (expectedNucleobases(codonBaseSequence, "UUA", "UUG", "CUU", "CUC", "CUA", "CUG")) {
+            return "Leucine";
+        } else if (expectedNucleobases(codonBaseSequence, "AUU", "AUC", "AUA")) {
+            return "Methionine";
+        } else if (expectedNucleobases(codonBaseSequence, "GUU", "GUC", "GUA", "GUG")) {
+            return "Valine";
+        } else if (expectedNucleobases(codonBaseSequence, "UCU", "UCC", "UCA", "UCG", "AGU", "AGC")) {
+            return "Serine";
+        } else if (expectedNucleobases(codonBaseSequence, "CCU", "CCC", "CCA", "CCG")) {
+            return "Proline";
+        } else if (expectedNucleobases(codonBaseSequence, "ACU", "ACC", "ACA", "ACG")) {
+            return "Threonine";
+        } else if (expectedNucleobases(codonBaseSequence, "GCU", "GCC", "GCA", "GCG")) {
+            return "Alanine";
+        } else if (expectedNucleobases(codonBaseSequence, "UAU", "UAC")) {
+            return "Tyrosine";
+        } else if (expectedNucleobases(codonBaseSequence, "CAU", "CAC")) {
+            return "Histidine";
+        } else if (expectedNucleobases(codonBaseSequence, "CAA", "CAG")) {
+            return "Glutamine";
+        } else if (expectedNucleobases(codonBaseSequence, "AAU", "AAC")) {
+            return "Asparagine";
+        } else if (expectedNucleobases(codonBaseSequence, "AAA", "AAG")) {
+            return "Lysine";
+        } else if (expectedNucleobases(codonBaseSequence, "GAU", "GAC")) {
+            return "Aspartic acid";
+        } else if (expectedNucleobases(codonBaseSequence, "GAA", "GAG")) {
+            return "Glutamic acid";
+        } else if (expectedNucleobases(codonBaseSequence, "UGU", "UGC")) {
+            return "Cysteine";
+        } else if (expectedNucleobases(codonBaseSequence, "UGG")) {
+            return "Tryptophan";
+        } else if (expectedNucleobases(codonBaseSequence, "CGU", "CGC", "CGA", "CGG", "AGA", "AGG")) {
+            return "Arginine";
+        } else if (expectedNucleobases(codonBaseSequence, "GGU", "GGC", "GGA", "GGG")) {
+            return "Glycine";
+        } else {
+            return "STOP";
+        }
     }
 
 }
