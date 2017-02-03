@@ -1,13 +1,12 @@
-
 package fi.samuel.dna.converter.logic;
 
 import java.util.ArrayList;
 
-public class mRNA {
-    
+public class MessengerRNA {
+
     private ArrayList<Base> mRnaSequence;
 
-    public mRNA(DNA dna) {
+    public MessengerRNA(DNA dna) {
         this.mRnaSequence = new ArrayList();
         for (int i = 0; i < dna.getDnaSequence().size(); i++) {
             mRnaSequence.add(dna.getDnaSequence().get(i).complementaryBase());
@@ -17,8 +16,5 @@ public class mRNA {
     public ArrayList<Base> getmRnaSequence() {
         return mRnaSequence;
     }
-    
-    
-    
-    
+
 }

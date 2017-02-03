@@ -2,8 +2,8 @@
 package fi.samuel.dna.converter.logictest;
 
 import fi.samuel.dna.converter.logic.DNA;
-import fi.samuel.dna.converter.logic.mRNA;
-import fi.samuel.dna.converter.logic.tRNA;
+import fi.samuel.dna.converter.logic.MessengerRNA;
+import fi.samuel.dna.converter.logic.TransferRNA;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -14,8 +14,8 @@ import static org.junit.Assert.*;
  */
 public class tRNATest {
     
-    private tRNA tRNA1;
-    private tRNA tRNA2;
+    private TransferRNA tRNA1;
+    private TransferRNA tRNA2;
     
     public tRNATest() {
     }
@@ -23,11 +23,11 @@ public class tRNATest {
     @Before
     public void setUp() {
         DNA dna1 = new DNA("TCTCAA");
-        mRNA mRNA1 = new mRNA(dna1);
-        tRNA1 = new tRNA(mRNA1);
+        MessengerRNA mRNA1 = new MessengerRNA(dna1);
+        tRNA1 = new TransferRNA(mRNA1);
         DNA dna2 = new DNA("");
-        mRNA mRNA2 = new mRNA(dna2);
-        tRNA2 = new tRNA(mRNA2);
+        MessengerRNA mRNA2 = new MessengerRNA(dna2);
+        tRNA2 = new TransferRNA(mRNA2);
     }
     
     @Test

@@ -1,8 +1,7 @@
-
 package fi.samuel.dna.converter.logic;
 
 public class Base {
-    
+
     private final char nucleobase;
 
     public Base(char nucleobase) {
@@ -12,9 +11,7 @@ public class Base {
     public char getNucleobase() {
         return nucleobase;
     }
-    
-    
-    
+
     public Base complementaryBase() {
         if (this.nucleobase == 'A') {
             return new Base('U');
@@ -26,10 +23,9 @@ public class Base {
             return new Base('C');
         }
     }
-    
+
     public boolean isPurine() {
         return this.nucleobase == 'A' || this.nucleobase == 'G';
     }
 
-   
 }

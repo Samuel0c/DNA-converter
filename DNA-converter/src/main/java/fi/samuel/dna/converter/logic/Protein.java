@@ -7,7 +7,7 @@ public class Protein {
     private ArrayList<String> aminoAcidSequence;
     private final ArrayList<Base> tRnaSequence;
 
-    public Protein(tRNA tRNA) {
+    public Protein(TransferRNA tRNA) {
         this.aminoAcidSequence = new ArrayList<>();
         this.tRnaSequence = new ArrayList<>();
         for (Base c : tRNA.gettRnaSequence()) {
