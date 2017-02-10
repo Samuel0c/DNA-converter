@@ -1,0 +1,981 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+	border: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-family: Consolas, Courier, monospace;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>Base.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package fi.samuel.dna.converter.logic;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Bases are the constituents of DNA and RNA strands.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Base {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final char nucleobase;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_10'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_11'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_12'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Sets a nucleobase when new base is created.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_13'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_14'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param nucleobase Nucleobase is the character that describes the type of</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_15'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * the base (adenine, thymine, guanine, cytosine or uracil).</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_16'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_17'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public Base(char nucleobase) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_18'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.nucleobase = nucleobase;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_19'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_20'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_21'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_22'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * The type of the base.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_23'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_24'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return Gives the type of the base as char (A, T, G, C, or U).</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_25'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_26'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public char getNucleobase() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_27'/>
+27
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_27'>1</a>
+<span>
+1. getNucleobase : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return nucleobase;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_28'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_29'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_30'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_31'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * The complementary base of another base. A base can pair only with a</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_32'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * specific type of bases.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_33'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_34'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return Base, which can pair with the original base.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_35'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_36'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public Base complementaryBase() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_37'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        char letter = &#39;C&#39;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_38'/>
+38
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_38'>1</a>
+<span>
+1. complementaryBase : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (this.nucleobase == &#39;A&#39;) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_39'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            letter = &#39;U&#39;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_40'/>
+40
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_40'>2</a>
+<span>
+1. complementaryBase : negated conditional &rarr; KILLED<br/>
+2. complementaryBase : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (this.nucleobase == &#39;T&#39; || this.nucleobase == &#39;U&#39;) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_41'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            letter = &#39;A&#39;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_42'/>
+42
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_42'>1</a>
+<span>
+1. complementaryBase : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (this.nucleobase == &#39;C&#39;) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_43'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            letter = &#39;G&#39;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_44'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_45'/>
+45
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_45'>1</a>
+<span>
+1. complementaryBase : mutated return of Object value for fi/samuel/dna/converter/logic/Base::complementaryBase to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return new Base(letter);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_46'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_47'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_48'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_49'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Describes the properties of the nucleobase.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_50'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_51'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_52'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return Gives a boolean value that tells whether a base is purine or not.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_53'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_54'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean isPurine() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_55'/>
+55
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_55'>3</a>
+<span>
+1. isPurine : negated conditional &rarr; KILLED<br/>
+2. isPurine : negated conditional &rarr; KILLED<br/>
+3. isPurine : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return this.nucleobase == &#39;A&#39; || this.nucleobase == &#39;G&#39;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_56'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_57'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@2503ec73_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_58'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2503ec73_27'>27</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_27'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getNucleobase<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.BaseTest.cytosineHasCorrectBase(fi.samuel.dna.converter.logic.BaseTest)</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2503ec73_38'>38</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_38'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>complementaryBase<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.BaseTest.adenineHasCorrectComplementaryBase(fi.samuel.dna.converter.logic.BaseTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2503ec73_40'>40</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_40'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>complementaryBase<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.BaseTest.guanineHasCorrectComplementaryBase(fi.samuel.dna.converter.logic.BaseTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>complementaryBase<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.BaseTest.guanineHasCorrectComplementaryBase(fi.samuel.dna.converter.logic.BaseTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2503ec73_42'>42</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_42'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>complementaryBase<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.BaseTest.guanineHasCorrectComplementaryBase(fi.samuel.dna.converter.logic.BaseTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2503ec73_45'>45</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_45'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>complementaryBase<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.BaseTest.adenineHasCorrectComplementaryBase(fi.samuel.dna.converter.logic.BaseTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Base::complementaryBase to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@2503ec73_55'>55</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@2503ec73_55'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isPurine<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.DNATest.pyrimidinePercentageReturnsCorrectValue(fi.samuel.dna.converter.logic.DNATest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isPurine<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.DNATest.pyrimidinePercentageReturnsCorrectValue(fi.samuel.dna.converter.logic.DNATest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isPurine<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.DNATest.purinePercentageReturnsCorrectValue(fi.samuel.dna.converter.logic.DNATest)</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>fi.samuel.dna.converter.logic.ProteinTest.tgtCorrespondsToCysteine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gcaCorrespondsToAlanine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gagCorrespondsToGlutamicAcid(fi.samuel.dna.converter.logic.ProteinTest) (11 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tctCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tatCorrespondsToTyrosine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gccCorrespondsToAlanine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tcgCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.mRNATest.mRnaSequenceDoesNotContainThymine(fi.samuel.dna.converter.logic.mRNATest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aacCorrespondsToAsparagine(fi.samuel.dna.converter.logic.ProteinTest) (6 ms)</li><li>fi.samuel.dna.converter.logic.DNATest.pyrimidinePercentageDoesNotExceed100(fi.samuel.dna.converter.logic.DNATest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ccgCorrespondsToProline(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ctaCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aaaCorrespondsToLysine(fi.samuel.dna.converter.logic.ProteinTest) (17 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cccCorrespondsToProline(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.DNATest.pyrimidinePercentageReturnsCorrectValue(fi.samuel.dna.converter.logic.DNATest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gggCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tagCorrespondsToStop(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.acgCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest) (8 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gtgCorrespondsToValine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ctcCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (4 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ccaCorrespondsToProline(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ggtCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.agtCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gaaCorrespondsToGlutamicAcid(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tacCorrespondsToTyrosine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.mRNATest.getMRnaSequenceHasCorrectSizeWhenEmpty(fi.samuel.dna.converter.logic.mRNATest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ggaCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ggcCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tgaEndsAminoAcidSequence(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aggCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tgcCorrespondsToCysteine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tttCorrespondsToPhenylalanine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.mRNATest.getMRnaSequenceHasCorrectSize(fi.samuel.dna.converter.logic.mRNATest) (0 ms)</li><li>fi.samuel.dna.converter.logic.BaseTest.guanineHasCorrectComplementaryBase(fi.samuel.dna.converter.logic.BaseTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gatCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.BaseTest.adenineHasCorrectComplementaryBase(fi.samuel.dna.converter.logic.BaseTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.atgCorrespondsToMethionine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.agaCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (8 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cacCorrespondsToHistidine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gcgCorrespondsToAlanine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.acaCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aatCorrespondsToAsparagine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cgcCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.agcCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cgaCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (6 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cggCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tgaCorrespondsToStop(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.atcCorrespondsToIsoleucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aagCorrespondsToLysine(fi.samuel.dna.converter.logic.ProteinTest) (4 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ataCorrespondsToIsoleucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.taaEndsAminoAcidSequence(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gacCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ttcCorrespondsToPhenylalanine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.BaseTest.thymineHasCorrectBase(fi.samuel.dna.converter.logic.BaseTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.BaseTest.uracilHasCorrectBase(fi.samuel.dna.converter.logic.BaseTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.attCorrespondsToIsoleucine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tcaCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.caaCorrespondsToGlutamine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ttaCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.actCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.tRNATest.getTRnaSequenceHasCorrectSizeWhenEmpty(fi.samuel.dna.converter.logic.tRNATest) (0 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ttgCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cttCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gtcCorrespondsToValine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ccuCorrespondsToProline(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.accCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.correctNumberOfAminoAcidsWhenNumberOfBasesInDnaSequenceIsNotDivisibleByThreeRemainderTwo(fi.samuel.dna.converter.logic.ProteinTest) (5 ms)</li><li>fi.samuel.dna.converter.logic.DNATest.purinePercentageReturnsCorrectValue(fi.samuel.dna.converter.logic.DNATest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ctgCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tggCorrespondsToTryptophan(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gctCorrespondsToAlanine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.taaCorrespondsToStop(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.correctNumberOfAminoAcidsWhenNumberOfBasesInDnaSequenceIsNotDivisibleByThree(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.BaseTest.uracilHasCorrectComplementaryBase(fi.samuel.dna.converter.logic.BaseTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.BaseTest.thymineHasCorrectComplementaryBase(fi.samuel.dna.converter.logic.BaseTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.BaseTest.adenineHasCorrectBase(fi.samuel.dna.converter.logic.BaseTest) (9 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cagCorrespondsToGlutamine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.BaseTest.cytosineHasCorrectComplementaryBase(fi.samuel.dna.converter.logic.BaseTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gttCorrespondsToValine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tagEndsAminoAcidSequence(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.tRNATest.getTRnaSequenceHasCorrectSize(fi.samuel.dna.converter.logic.tRNATest) (0 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.catCorrespondsToHistidine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cgtCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.doesNotReturnAminoAcidsWhenEmpty(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gtaCorrespondsToValine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.BaseTest.cytosineHasCorrectBase(fi.samuel.dna.converter.logic.BaseTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.BaseTest.guanineHasCorrectBase(fi.samuel.dna.converter.logic.BaseTest) (1 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.8
+
+</body>
+</html>
