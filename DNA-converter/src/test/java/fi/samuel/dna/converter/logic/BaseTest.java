@@ -1,5 +1,5 @@
 
-package fi.samuel.dna.converter.logictest;
+package fi.samuel.dna.converter.logic;
 
 import org.junit.Before;
 import org.junit.Test;

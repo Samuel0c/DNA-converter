@@ -1,5 +1,5 @@
 
-package fi.samuel.dna.converter.logictest;
+package fi.samuel.dna.converter.logic;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -47,6 +47,11 @@ public class DNATest {
     @Test
     public void pyrimidinePercentageReturnsCorrectValue () {
         assertEquals(100, dna2.pyrimidinePercentage());
+    }
+    
+    @Test
+    public void pyrimidinePercentageDoesNotExceed100 () {
+        assertTrue(dna2.pyrimidinePercentage() <= 100);
     }
     
     @Test

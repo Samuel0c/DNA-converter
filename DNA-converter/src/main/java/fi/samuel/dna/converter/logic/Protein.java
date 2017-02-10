@@ -2,11 +2,22 @@ package fi.samuel.dna.converter.logic;
 
 import java.util.ArrayList;
 
+/**
+ * Protein contains amino acids in specific order.
+ *
+ * Here protein means the primary structure of a protein, which is the amino
+ * acid sequence. TransferRNA is used to determine the sequence.
+ *
+ */
 public class Protein {
 
     private ArrayList<String> aminoAcidSequence;
     private final ArrayList<Base> tRnaSequence;
 
+    /**
+     *
+     * @param tRNA
+     */
     public Protein(TransferRNA tRNA) {
         this.aminoAcidSequence = new ArrayList<>();
         this.tRnaSequence = new ArrayList<>();
@@ -15,13 +26,17 @@ public class Protein {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<String> getAminoAcidSequence() {
         if (this.aminoAcidSequence.isEmpty()) {
-            int numberOfCodons = (tRnaSequence.size() - (tRnaSequence.size() % 3)) / 3;
+            int numberOfCodons = this.tRnaSequence.size() / 3;
             int index = 0;
             while (numberOfCodons > 0) {
                 ArrayList<Base> currentCodon = new ArrayList<>();
-                for (int counterToThree = 1; counterToThree <= 3; counterToThree++) {
+                for (int counterToThree = 0; counterToThree < 3; counterToThree++) {
                     currentCodon.add(tRnaSequence.get(index));
                     index++;
                 }
@@ -55,8 +70,10 @@ public class Protein {
             return "Phenylalanine";
         } else if (expectedNucleobases(codonBaseSequence, "UUA", "UUG", "CUU", "CUC", "CUA", "CUG")) {
             return "Leucine";
-        } else if (expectedNucleobases(codonBaseSequence, "AUU", "AUC", "AUA")) {
+        } else if (expectedNucleobases(codonBaseSequence, "AUG")) {
             return "Methionine";
+        } else if (expectedNucleobases(codonBaseSequence, "AUU", "AUC", "AUA")) {
+            return "Isoleucine";
         } else if (expectedNucleobases(codonBaseSequence, "GUU", "GUC", "GUA", "GUG")) {
             return "Valine";
         } else if (expectedNucleobases(codonBaseSequence, "UCU", "UCC", "UCA", "UCG", "AGU", "AGC")) {

@@ -1,5 +1,5 @@
 
-package fi.samuel.dna.converter.logictest;
+package fi.samuel.dna.converter.logic;
 
 import fi.samuel.dna.converter.logic.Base;
 import fi.samuel.dna.converter.logic.DNA;
