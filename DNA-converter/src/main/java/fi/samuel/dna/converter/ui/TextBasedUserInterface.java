@@ -19,14 +19,14 @@ public class TextBasedUserInterface {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         Scanner scanner = new Scanner(System.in);
-        
+
         String dnaBaseSequence = "";
-        while(true) {
+        while (true) {
             System.out.println("Please give the DNA base sequence using A, T, G and C, then press enter");
-            dnaBaseSequence = scanner.nextLine().toUpperCase().replaceAll("\\s","");
-            
+            dnaBaseSequence = scanner.nextLine().toUpperCase().replaceAll("\\s", "");
+
             if (checkIfValidDnaSequence(dnaBaseSequence)) {
                 break;
             }
@@ -63,10 +63,9 @@ public class TextBasedUserInterface {
         for (String c : s) {
             System.out.println(c);
         }
-        
-        
+
     }
-    
+
     public static boolean checkIfValidDnaSequence(String sequence) {
         for (int i = 0; i < sequence.length(); i++) {
             if (!(sequence.charAt(i) == 'A' || sequence.charAt(i) == 'T' || sequence.charAt(i) == 'C' || sequence.charAt(i) == 'G')) {
@@ -75,6 +74,5 @@ public class TextBasedUserInterface {
         }
         return true;
     }
-    
-    
+
 }

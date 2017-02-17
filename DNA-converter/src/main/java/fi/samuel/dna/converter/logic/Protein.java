@@ -15,8 +15,11 @@ public class Protein {
     private final ArrayList<Base> tRnaSequence;
 
     /**
+     * When creating new protein, the tRNA base sequence is stored and storage
+     * place for corresponding amino acid sequence is created.
      *
-     * @param tRNA
+     * @param tRNA TransferRNA is needed as parameter, because it determines the
+     * protein's amino acid sequence.
      */
     public Protein(TransferRNA tRNA) {
         this.aminoAcidSequence = new ArrayList<>();
@@ -27,8 +30,14 @@ public class Protein {
     }
 
     /**
+     * Converts the tRNA sequence to corresponding amino acid sequence. First
+     * tRNA sequence is divided into triplets (units consisting of three bases).
+     * Then the codon is converted into string representation of its bases.
+     * After this, it is checked which amino acid does the triplet code for. The
+     * amino acid (or stop) is added to list.
      *
-     * @return
+     * @return Gives the amino acid sequence corresponding to tRNA strand as
+     * list.
      */
     public ArrayList<String> getAminoAcidSequence() {
         if (this.aminoAcidSequence.isEmpty()) {

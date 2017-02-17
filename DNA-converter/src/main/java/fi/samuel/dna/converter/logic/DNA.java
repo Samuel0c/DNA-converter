@@ -14,8 +14,10 @@ public class DNA {
     private final ArrayList<Base> dnaBaseSequence;
 
     /**
-     *
-     * @param dnaSequence
+     *Creates new DNA strand and stores the bases, which forms the DNA strand, in a list.
+     * 
+     * @param dnaSequence A string that represents the base sequence of segment
+     * of the coding strand of DNA
      */
     public DNA(String dnaSequence) {
         this.dnaBaseSequence = new ArrayList();
@@ -24,17 +26,14 @@ public class DNA {
         }
     }
 
-    /**
-     *
-     * @return
-     */
     public ArrayList<Base> getDnaSequence() {
         return dnaBaseSequence;
     }
 
     /**
+     * Gives the percentage of purine bases in the studied DNA segment.
      *
-     * @return
+     * @return The percentage as integer
      */
     public int purinePercentage() {
         if (this.dnaBaseSequence.isEmpty()) {
@@ -50,8 +49,9 @@ public class DNA {
     }
 
     /**
-     *
-     * @return
+     *Gives the percentage of pyrimidine bases in the studied DNA segment.
+     * 
+     * @return The percentage as integer
      */
     public int pyrimidinePercentage() {
         if (this.dnaBaseSequence.isEmpty()) {

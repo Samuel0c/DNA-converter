@@ -13,8 +13,10 @@ public class TransferRNA {
     private ArrayList<Base> tRnaSequence;
 
     /**
+     * Creates new TransferRNA strand and stores the bases of tRNA in a list.
      *
-     * @param mRNA
+     * @param mRNA The base sequence of mRNA determines the base sequence of
+     * corresponding tRNA sequence.
      */
     public TransferRNA(MessengerRNA mRNA) {
         this.tRnaSequence = new ArrayList();
@@ -23,10 +25,6 @@ public class TransferRNA {
         }
     }
 
-    /**
-     *
-     * @return
-     */
     public ArrayList<Base> gettRnaSequence() {
         return tRnaSequence;
     }

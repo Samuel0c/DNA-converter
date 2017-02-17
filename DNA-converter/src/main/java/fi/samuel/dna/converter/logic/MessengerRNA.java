@@ -14,8 +14,9 @@ public class MessengerRNA {
     private ArrayList<Base> mRnaSequence;
 
     /**
+     * Creates new MessengerRNA strand and stores the bases of mRNA in a list.
      *
-     * @param dna
+     * @param dna 
      */
     public MessengerRNA(DNA dna) {
         this.mRnaSequence = new ArrayList();
@@ -24,10 +25,7 @@ public class MessengerRNA {
         }
     }
 
-    /**
-     *
-     * @return
-     */
+
     public ArrayList<Base> getmRnaSequence() {
         return mRnaSequence;
     }
