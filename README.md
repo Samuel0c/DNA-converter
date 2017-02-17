@@ -4,7 +4,7 @@ converts DNA sequence to mRNA, tRNA, and amino acid sequence
 
 ### Dokumentaatio
 
-[Aiheen kuvaus](dokumentaatio/aihemaarittely.md)
+[Aiheen kuvaus](dokumentaatio/aiheenKuvausJaRakenne.md)
 
 [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
 
