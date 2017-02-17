@@ -9,4 +9,6 @@ Päivä | Tunnit | Kuvaus
 03.02.2017 | 3.0h | Testien kirjoittamista ja raporttien laatimisen opettelua
 09.02.2017 | 2.0h | Testien jatkamista
 10.02.2017 | 3.0h | Tekstikäyttöliittymä ja javaDoc:in laatimista
+16.02.2017 | 2.0h | Readme-korjauksia ja graafiseen käyttöliittymään tutustumista
+17.02.2017 | 3.0h | Käyttöliittymän jatkamista, javaDocin kirjoittamista, sekvenssikaavion hahmottelua
 ... | ... | ...

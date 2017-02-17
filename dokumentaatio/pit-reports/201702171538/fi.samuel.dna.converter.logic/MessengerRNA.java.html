@@ -1,0 +1,582 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+	border: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-family: Consolas, Courier, monospace;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>MessengerRNA.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package fi.samuel.dna.converter.logic;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.ArrayList;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * MessengerRNA carries the information obtained from DNA to transferRNA.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * The base sequence is complementary to DNA, but instead of thymine, mRNA</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * contains uracil.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_10'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_11'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_12'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class MessengerRNA {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_13'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_14'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private ArrayList&#60;Base&#62; mRnaSequence;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_15'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_16'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_17'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Creates new MessengerRNA strand and stores the bases of mRNA in a list.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_18'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_19'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param dna </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_20'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_21'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public MessengerRNA(DNA dna) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_22'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.mRnaSequence = new ArrayList();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_23'/>
+23
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_23'>3</a>
+<span>
+1. <init> : changed conditional boundary &rarr; KILLED<br/>
+2. <init> : Changed increment from 1 to -1 &rarr; KILLED<br/>
+3. <init> : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int i = 0; i &#60; dna.getDnaSequence().size(); i++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_24'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            mRnaSequence.add(dna.getDnaSequence().get(i).complementaryBase());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_25'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_26'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_27'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_28'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_29'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public ArrayList&#60;Base&#62; getmRnaSequence() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_30'/>
+30
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_30'>1</a>
+<span>
+1. getmRnaSequence : mutated return of Object value for fi/samuel/dna/converter/logic/MessengerRNA::getmRnaSequence to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return mRnaSequence;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_31'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_32'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@75e09567_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_33'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@75e09567_23'>23</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_23'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.samuel.dna.converter.logic.tRNATest.getTRnaSequenceHasCorrectSize(fi.samuel.dna.converter.logic.tRNATest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.samuel.dna.converter.logic.tRNATest.getTRnaSequenceHasCorrectSize(fi.samuel.dna.converter.logic.tRNATest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.samuel.dna.converter.logic.tRNATest.getTRnaSequenceHasCorrectSize(fi.samuel.dna.converter.logic.tRNATest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@75e09567_30'>30</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@75e09567_30'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getmRnaSequence<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.tRNATest.getTRnaSequenceHasCorrectSize(fi.samuel.dna.converter.logic.tRNATest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/MessengerRNA::getmRnaSequence to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>fi.samuel.dna.converter.logic.ProteinTest.tgtCorrespondsToCysteine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gcaCorrespondsToAlanine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gagCorrespondsToGlutamicAcid(fi.samuel.dna.converter.logic.ProteinTest) (7 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tctCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gccCorrespondsToAlanine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tatCorrespondsToTyrosine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tcgCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.mRNATest.mRnaSequenceDoesNotContainThymine(fi.samuel.dna.converter.logic.mRNATest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aacCorrespondsToAsparagine(fi.samuel.dna.converter.logic.ProteinTest) (4 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ccgCorrespondsToProline(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ctaCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aaaCorrespondsToLysine(fi.samuel.dna.converter.logic.ProteinTest) (18 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cccCorrespondsToProline(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.acgCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gggCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tagCorrespondsToStop(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gtgCorrespondsToValine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ctcCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ccaCorrespondsToProline(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ggtCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.agtCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gaaCorrespondsToGlutamicAcid(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tacCorrespondsToTyrosine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.mRNATest.getMRnaSequenceHasCorrectSizeWhenEmpty(fi.samuel.dna.converter.logic.mRNATest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ggcCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ggaCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tgaEndsAminoAcidSequence(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aggCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tttCorrespondsToPhenylalanine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tgcCorrespondsToCysteine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.mRNATest.getMRnaSequenceHasCorrectSize(fi.samuel.dna.converter.logic.mRNATest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gatCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.atgCorrespondsToMethionine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.agaCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cacCorrespondsToHistidine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gcgCorrespondsToAlanine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.acaCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest) (4 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aatCorrespondsToAsparagine(fi.samuel.dna.converter.logic.ProteinTest) (4 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cgcCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.agcCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cgaCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cggCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tgaCorrespondsToStop(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.atcCorrespondsToIsoleucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aagCorrespondsToLysine(fi.samuel.dna.converter.logic.ProteinTest) (4 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ataCorrespondsToIsoleucine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.taaEndsAminoAcidSequence(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gacCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ttcCorrespondsToPhenylalanine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.attCorrespondsToIsoleucine(fi.samuel.dna.converter.logic.ProteinTest) (4 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tcaCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.caaCorrespondsToGlutamine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ttaCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.actCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.tRNATest.getTRnaSequenceHasCorrectSizeWhenEmpty(fi.samuel.dna.converter.logic.tRNATest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ttgCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cttCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gtcCorrespondsToValine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ccuCorrespondsToProline(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.accCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest) (4 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.correctNumberOfAminoAcidsWhenNumberOfBasesInDnaSequenceIsNotDivisibleByThreeRemainderTwo(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ctgCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tggCorrespondsToTryptophan(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gctCorrespondsToAlanine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.taaCorrespondsToStop(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (6 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.correctNumberOfAminoAcidsWhenNumberOfBasesInDnaSequenceIsNotDivisibleByThree(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cagCorrespondsToGlutamine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gttCorrespondsToValine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tagEndsAminoAcidSequence(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.tRNATest.getTRnaSequenceHasCorrectSize(fi.samuel.dna.converter.logic.tRNATest) (0 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.catCorrespondsToHistidine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cgtCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.doesNotReturnAminoAcidsWhenEmpty(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gtaCorrespondsToValine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.8
+
+</body>
+</html>
