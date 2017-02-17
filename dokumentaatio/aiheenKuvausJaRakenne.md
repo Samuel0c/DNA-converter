@@ -12,6 +12,6 @@ Käyttäjä voi lisätä uuden DNA-sekvenssin, jonka tulee olla proteiinia kooda
   - jos sekvenssi on validi, näytetään sitä vastaavat  mRNA-, tRNA- ja aminohapposekvenssit
   - napsauttamalla lisävaihtoehtoja käyttäjälle näytetään esim. DNA-ketjun  puriini- ja pyrimidiinipitoisuus
 
-![luokkakaavio](DNA-converter.png)
+![luokkakaavio](Luokkakaavio.png)
 
 ![sekvenssikaavio] (sKaavio.jpg)
