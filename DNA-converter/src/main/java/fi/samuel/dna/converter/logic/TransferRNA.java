@@ -25,8 +25,21 @@ public class TransferRNA {
         }
     }
 
+    /**
+     *Gives the base sequence from which the tRNA sequence consists of.
+     * @return Returns the base sequence as ArrayList.
+     */
     public ArrayList<Base> gettRnaSequence() {
         return tRnaSequence;
+    }
+
+    @Override
+    public String toString() {
+        String trnaSequence = "";
+        for (Base c : this.gettRnaSequence()) {
+            trnaSequence += c.getNucleobase();
+        }
+        return trnaSequence;
     }
 
 }

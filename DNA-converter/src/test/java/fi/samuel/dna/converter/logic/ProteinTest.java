@@ -93,6 +93,8 @@ public class ProteinTest {
     private TransferRNA emptyTRna;
     private TransferRNA tRnaLengthNotDivisibleByThreeRemainderOne;
     private TransferRNA tRnaLengthNotDivisibleByThreeRemainderTwo;
+    
+    private Protein proteinFromThreeAminoAcids;
 
     public ProteinTest() {
     }
@@ -190,6 +192,13 @@ public class ProteinTest {
         emptyTRna = new TransferRNA(new MessengerRNA(new DNA("")));
         tRnaLengthNotDivisibleByThreeRemainderOne = new TransferRNA(new MessengerRNA(new DNA("TTTAAAGGGC")));
         tRnaLengthNotDivisibleByThreeRemainderTwo = new TransferRNA(new MessengerRNA(new DNA("TTTAAAGGGCC")));
+        
+        proteinFromThreeAminoAcids = new Protein(new TransferRNA(new MessengerRNA(new DNA("TTTTTTTTT"))));
+    }
+    
+    @Test
+    public void toStringGivesCorrectSequence() {
+        assertEquals("Phenylalanine Phenylalanine Phenylalanine ", proteinFromThreeAminoAcids.toString());
     }
     
     @Test

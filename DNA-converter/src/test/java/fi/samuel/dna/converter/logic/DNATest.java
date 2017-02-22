@@ -45,6 +45,11 @@ public class DNATest {
     }
     
     @Test
+    public void purinePercentageDoesNotExceed100 () {
+        assertTrue(dna2.purinePercentage() <= 100);
+    }
+    
+    @Test
     public void pyrimidinePercentageReturnsCorrectValue () {
         assertEquals(100, dna2.pyrimidinePercentage());
     }

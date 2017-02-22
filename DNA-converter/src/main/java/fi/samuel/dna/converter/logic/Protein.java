@@ -120,4 +120,14 @@ public class Protein {
         }
     }
 
+    @Override
+    public String toString() {
+        ArrayList<String> s = this.getAminoAcidSequence();
+        String aminoAcidSequence = "";
+        for (String c : s) {
+            aminoAcidSequence += c + " ";
+        }
+        return aminoAcidSequence;
+    }
+
 }

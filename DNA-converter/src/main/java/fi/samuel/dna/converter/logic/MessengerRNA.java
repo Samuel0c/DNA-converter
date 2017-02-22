@@ -16,7 +16,8 @@ public class MessengerRNA {
     /**
      * Creates new MessengerRNA strand and stores the bases of mRNA in a list.
      *
-     * @param dna 
+     * @param dna The base sequence of DNA determines the base sequence of
+     * corresponding mRNA sequence.
      */
     public MessengerRNA(DNA dna) {
         this.mRnaSequence = new ArrayList();
@@ -25,9 +26,21 @@ public class MessengerRNA {
         }
     }
 
-
+    /**
+     * Gives the base sequence from which the mRNA sequence is made up.
+     * @return Returns the base sequence as ArrayList.
+     */
     public ArrayList<Base> getmRnaSequence() {
         return mRnaSequence;
+    }
+
+    @Override
+    public String toString() {
+        String mrnaSequence = "";
+        for (Base c : this.getmRnaSequence()) {
+            mrnaSequence += c.getNucleobase();
+        }
+        return mrnaSequence;
     }
 
 }

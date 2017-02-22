@@ -1,21 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fi.samuel.dna.converter.ui;
 
 import fi.samuel.dna.converter.logic.*;
-import java.util.ArrayList;
 
 /**
- *
- * @author samleppi
+ * DNAconverterUI contains that graphic user interface. It allows the user to
+ * type in the DNA sequence that one wishes to analyse and then see the
+ * corresponding mRNA, tRNA, and amino acid sequences. One can also clear the
+ * form and once finish, quit the program.
  */
 public class DNAconverterUI extends javax.swing.JFrame {
 
     /**
-     * Creates new form DNAconverterUI
+     * Creates new form DNAconverterUI.
      */
     public DNAconverterUI() {
         initComponents();
@@ -183,45 +179,25 @@ public class DNAconverterUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String dnaSequence = jTextField1.getText().toUpperCase().replaceAll("\\s", "");
-
         if (!checkIfValidDnaSequence(dnaSequence)) {
             jTextField1.setText("Retry, the sequence that you entered was invalid");
         } else {
-
             DNA dna = new DNA(dnaSequence);
-
             MessengerRNA mrna = new MessengerRNA(dna);
-            String mrnaSequence = "";
-            for (Base c : mrna.getmRnaSequence()) {
-                mrnaSequence += c.getNucleobase();
-            }
-
-            jTextArea1.setText(mrnaSequence);
-
+            jTextArea1.setText(mrna.toString());
             TransferRNA trna = new TransferRNA(mrna);
-            String trnaSequence = "";
-            for (Base c : trna.gettRnaSequence()) {
-                trnaSequence += c.getNucleobase();
-            }
-
-            jTextArea2.setText(trnaSequence);
-
+            jTextArea2.setText(trna.toString());
             Protein protein = new Protein(trna);
-            ArrayList<String> s = protein.getAminoAcidSequence();
-            String aminoAcidSequence = "";
-            for (String c : s) {
-                aminoAcidSequence += c + " ";
-            }
-            
-            jTextArea3.setText(aminoAcidSequence);
-
+            jTextArea3.setText(protein.toString());
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
+
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jTextField1.setText("");
@@ -230,6 +206,14 @@ public class DNAconverterUI extends javax.swing.JFrame {
         jTextArea3.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    /**
+     * Verifies that given DNA base sequence consists of valid bases. This is
+     * done by checking that each given character is either A, T, C or G.
+     *
+     * @param sequence is the String representation of the DNA base sequence.
+     * @return Return true if the given sequence consists only from valid bases
+     * and otherwise it returns false.
+     */
     public static boolean checkIfValidDnaSequence(String sequence) {
         for (int i = 0; i < sequence.length(); i++) {
             if (!(sequence.charAt(i) == 'A' || sequence.charAt(i) == 'T' || sequence.charAt(i) == 'C' || sequence.charAt(i) == 'G')) {
@@ -240,6 +224,7 @@ public class DNAconverterUI extends javax.swing.JFrame {
     }
 
     /**
+     * When the program runs, the GUI window is displayed.
      * @param args the command line arguments
      */
     public static void main(String args[]) {

@@ -39,4 +39,15 @@ public class tRNATest {
     public void getTRnaSequenceHasCorrectSizeWhenEmpty () {
         assertEquals(0, tRNA2.gettRnaSequence().size());
     }
+    
+    @Test
+    public void toStringGivesCorrectBaseSequence() {
+        assertEquals("UCUCAA", tRNA1.toString());
+    }
+    
+    @Test
+    public void toStringGivesCorrectBaseSequenceWhenEmpty() {
+        assertEquals("", tRNA2.toString());
+    }
+    
 }

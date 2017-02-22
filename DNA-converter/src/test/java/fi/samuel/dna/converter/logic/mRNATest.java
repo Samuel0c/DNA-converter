@@ -29,20 +29,30 @@ public class mRNATest {
     }
     
     @Test
-    public void getMRnaSequenceHasCorrectSize () {
+    public void getMRnaSequenceHasCorrectSize() {
         assertEquals(6, mRNA1.getmRnaSequence().size());
     }
     
     @Test
-    public void getMRnaSequenceHasCorrectSizeWhenEmpty () {
+    public void getMRnaSequenceHasCorrectSizeWhenEmpty() {
         assertEquals(0, mRNA3.getmRnaSequence().size());
     }
     
     @Test
-    public void mRnaSequenceDoesNotContainThymine () {
+    public void mRnaSequenceDoesNotContainThymine(){
         for (Base current : mRNA2.getmRnaSequence()) {
             assertEquals(true, current.getNucleobase() != 'T');
         }
+    }
+    
+    @Test
+    public void toStringsGivesCorrectBaseSequence(){
+        assertEquals("UUU", mRNA2.toString());
+    }
+    
+    @Test
+    public void toStringsGivesCorrectBaseSequenceWhenEmpty(){
+        assertEquals("", mRNA3.toString());
     }
 
 }
