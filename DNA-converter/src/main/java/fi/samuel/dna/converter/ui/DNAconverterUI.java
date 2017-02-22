@@ -58,7 +58,7 @@ public class DNAconverterUI extends javax.swing.JFrame {
 
         jLabel4.setText("Amino acids");
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("Please give the DNA base sequence using A, T, G and C");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -183,35 +183,38 @@ public class DNAconverterUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String dnaSequence = jTextField1.getText().toUpperCase().replaceAll("\\s", "");
-        while (true) {
-            if (checkIfValidDnaSequence(dnaSequence)) {
-                break;
+
+        if (!checkIfValidDnaSequence(dnaSequence)) {
+            jTextField1.setText("Retry, the sequence that you entered was invalid");
+        } else {
+
+            DNA dna = new DNA(dnaSequence);
+
+            MessengerRNA mrna = new MessengerRNA(dna);
+            String mrnaSequence = "";
+            for (Base c : mrna.getmRnaSequence()) {
+                mrnaSequence += c.getNucleobase();
             }
-            System.out.println("Retry, the sequence that you entered was invalid");
-        }
-        DNA dna = new DNA(dnaSequence);
 
-        MessengerRNA mrna = new MessengerRNA(dna);
-        String mrnaSequence = "";
-        for (Base c : mrna.getmRnaSequence()) {
-            mrnaSequence += c.getNucleobase();
-        }
+            jTextArea1.setText(mrnaSequence);
 
-        jTextArea1.setText(mrnaSequence);
+            TransferRNA trna = new TransferRNA(mrna);
+            String trnaSequence = "";
+            for (Base c : trna.gettRnaSequence()) {
+                trnaSequence += c.getNucleobase();
+            }
 
-        TransferRNA trna = new TransferRNA(mrna);
-        String trnaSequence = "";
-        for (Base c : trna.gettRnaSequence()) {
-            trnaSequence += c.getNucleobase();
-        }
+            jTextArea2.setText(trnaSequence);
 
-        jTextArea2.setText(trnaSequence);
+            Protein protein = new Protein(trna);
+            ArrayList<String> s = protein.getAminoAcidSequence();
+            String aminoAcidSequence = "";
+            for (String c : s) {
+                aminoAcidSequence += c + " ";
+            }
+            
+            jTextArea3.setText(aminoAcidSequence);
 
-        Protein protein = new Protein(trna);
-        ArrayList<String> s = protein.getAminoAcidSequence();
-        String aminoAcidSequence = "";
-        for (String c : s) {
-            aminoAcidSequence += c + " ";
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed

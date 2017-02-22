@@ -60,4 +60,11 @@ public class DNA {
         return 100 - this.purinePercentage();
     }
 
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+
 }
