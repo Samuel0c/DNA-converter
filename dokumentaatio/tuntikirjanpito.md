@@ -11,4 +11,5 @@ Päivä | Tunnit | Kuvaus
 10.02.2017 | 3.0h | Tekstikäyttöliittymä ja javaDoc:in laatimista
 16.02.2017 | 2.0h | Readme-korjauksia ja graafiseen käyttöliittymään tutustumista
 17.02.2017 | 3.0h | Käyttöliittymän jatkamista, javaDocin kirjoittamista, sekvenssikaavion hahmottelua
+22.02.2017 | 4.0h | Käyttöliittymän korjailua, javaDocin täydentämistä, toString-metodit + niiden testit ym. pientä
 ... | ... | ...
