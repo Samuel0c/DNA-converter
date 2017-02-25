@@ -129,5 +129,5 @@ public class Protein {
         }
         return aminoAcidSequence;
     }
-
+ 
 }
