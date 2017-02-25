@@ -1,0 +1,2645 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+	border: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-family: Consolas, Courier, monospace;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>Protein.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package fi.samuel.dna.converter.logic;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.ArrayList;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Protein contains amino acids in specific order.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Here protein means the primary structure of a protein, which is the amino</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * acid sequence. TransferRNA is used to determine the sequence.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_10'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_11'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_12'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Protein {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_13'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_14'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private ArrayList&#60;String&#62; aminoAcidSequence;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_15'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final ArrayList&#60;Base&#62; tRnaSequence;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_16'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_17'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_18'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * When creating new protein, the tRNA base sequence is stored and storage</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_19'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * place for corresponding amino acid sequence is created.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_20'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_21'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param tRNA TransferRNA is needed as parameter, because it determines the</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_22'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * protein&#39;s amino acid sequence.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_23'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_24'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public Protein(TransferRNA tRNA) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_25'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.aminoAcidSequence = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_26'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.tRnaSequence = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_27'/>
+27
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_27'>1</a>
+<span>
+1. <init> : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (Base c : tRNA.gettRnaSequence()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_28'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            this.tRnaSequence.add(c);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_29'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_30'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_31'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_32'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_33'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Converts the tRNA sequence to corresponding amino acid sequence. First</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_34'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * tRNA sequence is divided into triplets (units consisting of three bases).</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_35'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Then the codon is converted into string representation of its bases.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_36'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * After this, it is checked which amino acid does the triplet code for. The</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_37'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * amino acid (or stop) is added to list.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_38'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_39'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return Gives the amino acid sequence corresponding to tRNA strand as</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_40'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * list.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_41'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_42'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public ArrayList&#60;String&#62; getAminoAcidSequence() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_43'/>
+43
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_43'>1</a>
+<span>
+1. getAminoAcidSequence : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (this.aminoAcidSequence.isEmpty()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_44'/>
+44
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_44'>1</a>
+<span>
+1. getAminoAcidSequence : Replaced integer division with multiplication &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            int numberOfCodons = this.tRnaSequence.size() / 3;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_45'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            int index = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_46'/>
+46
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_46'>2</a>
+<span>
+1. getAminoAcidSequence : changed conditional boundary &rarr; KILLED<br/>
+2. getAminoAcidSequence : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            while (numberOfCodons &#62; 0) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_47'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                ArrayList&#60;Base&#62; currentCodon = new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_48'/>
+48
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_48'>3</a>
+<span>
+1. getAminoAcidSequence : changed conditional boundary &rarr; KILLED<br/>
+2. getAminoAcidSequence : Changed increment from 1 to -1 &rarr; KILLED<br/>
+3. getAminoAcidSequence : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                for (int counterToThree = 0; counterToThree &#60; 3; counterToThree++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_49'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    currentCodon.add(tRnaSequence.get(index));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_50'/>
+50
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_50'>1</a>
+<span>
+1. getAminoAcidSequence : Changed increment from 1 to -1 &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    index++;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_51'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_52'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                this.aminoAcidSequence.add(codonToAminoAcid(currentCodon));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_53'/>
+53
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_53'>1</a>
+<span>
+1. getAminoAcidSequence : Changed increment from -1 to 1 &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                numberOfCodons--;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_54'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_55'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_56'/>
+56
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_56'>1</a>
+<span>
+1. getAminoAcidSequence : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::getAminoAcidSequence to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return this.aminoAcidSequence;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_57'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_58'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_59'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private boolean expectedNucleobases(String currentCodon, String... acceptedCodons) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_60'/>
+60
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_60'>3</a>
+<span>
+1. expectedNucleobases : changed conditional boundary &rarr; KILLED<br/>
+2. expectedNucleobases : Changed increment from 1 to -1 &rarr; KILLED<br/>
+3. expectedNucleobases : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (String currentAcceptedCodon : acceptedCodons) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_61'/>
+61
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_61'>1</a>
+<span>
+1. expectedNucleobases : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (currentAcceptedCodon.equals(currentCodon)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_62'/>
+62
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_62'>1</a>
+<span>
+1. expectedNucleobases : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                return true;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_63'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_64'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_65'/>
+65
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_65'>1</a>
+<span>
+1. expectedNucleobases : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return false;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_66'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_67'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_68'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private String codonToString(ArrayList&#60;Base&#62; codon) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_69'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String c = &#34;&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_70'/>
+70
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_70'>1</a>
+<span>
+1. codonToString : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (Base current : codon) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_71'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            c += current.getNucleobase();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_72'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_73'/>
+73
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_73'>1</a>
+<span>
+1. codonToString : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToString to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return c;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_74'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_75'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_76'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private String codonToAminoAcid(ArrayList&#60;Base&#62; codon) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_77'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String codonBaseSequence = codonToString(codon);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_78'/>
+78
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_78'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (expectedNucleobases(codonBaseSequence, &#34;UUU&#34;, &#34;UUC&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_79'/>
+79
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_79'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Phenylalanine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_80'/>
+80
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_80'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;UUA&#34;, &#34;UUG&#34;, &#34;CUU&#34;, &#34;CUC&#34;, &#34;CUA&#34;, &#34;CUG&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_81'/>
+81
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_81'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Leucine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_82'/>
+82
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_82'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;AUG&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_83'/>
+83
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_83'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Methionine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_84'/>
+84
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_84'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;AUU&#34;, &#34;AUC&#34;, &#34;AUA&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_85'/>
+85
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_85'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Isoleucine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_86'/>
+86
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_86'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;GUU&#34;, &#34;GUC&#34;, &#34;GUA&#34;, &#34;GUG&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_87'/>
+87
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_87'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Valine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_88'/>
+88
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_88'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;UCU&#34;, &#34;UCC&#34;, &#34;UCA&#34;, &#34;UCG&#34;, &#34;AGU&#34;, &#34;AGC&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_89'/>
+89
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_89'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Serine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_90'/>
+90
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_90'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;CCU&#34;, &#34;CCC&#34;, &#34;CCA&#34;, &#34;CCG&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_91'/>
+91
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_91'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Proline&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_92'/>
+92
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_92'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;ACU&#34;, &#34;ACC&#34;, &#34;ACA&#34;, &#34;ACG&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_93'/>
+93
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_93'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Threonine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_94'/>
+94
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_94'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;GCU&#34;, &#34;GCC&#34;, &#34;GCA&#34;, &#34;GCG&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_95'/>
+95
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_95'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Alanine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_96'/>
+96
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_96'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;UAU&#34;, &#34;UAC&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_97'/>
+97
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_97'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Tyrosine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_98'/>
+98
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_98'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;CAU&#34;, &#34;CAC&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_99'/>
+99
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_99'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Histidine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_100'/>
+100
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_100'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;CAA&#34;, &#34;CAG&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_101'/>
+101
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_101'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Glutamine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_102'/>
+102
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_102'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;AAU&#34;, &#34;AAC&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_103'/>
+103
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_103'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Asparagine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_104'/>
+104
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_104'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;AAA&#34;, &#34;AAG&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_105'/>
+105
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_105'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Lysine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_106'/>
+106
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_106'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;GAU&#34;, &#34;GAC&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_107'/>
+107
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_107'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Aspartic acid&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_108'/>
+108
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_108'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;GAA&#34;, &#34;GAG&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_109'/>
+109
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_109'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Glutamic acid&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_110'/>
+110
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_110'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;UGU&#34;, &#34;UGC&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_111'/>
+111
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_111'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Cysteine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_112'/>
+112
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_112'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;UGG&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_113'/>
+113
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_113'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Tryptophan&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_114'/>
+114
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_114'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;CGU&#34;, &#34;CGC&#34;, &#34;CGA&#34;, &#34;CGG&#34;, &#34;AGA&#34;, &#34;AGG&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_115'/>
+115
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_115'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Arginine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_116'/>
+116
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_116'>1</a>
+<span>
+1. codonToAminoAcid : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (expectedNucleobases(codonBaseSequence, &#34;GGU&#34;, &#34;GGC&#34;, &#34;GGA&#34;, &#34;GGG&#34;)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_117'/>
+117
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_117'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;Glycine&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_118'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        } else {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_119'/>
+119
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_119'>1</a>
+<span>
+1. codonToAminoAcid : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return &#34;STOP&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_120'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_121'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_122'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_123'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_124'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String toString() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_125'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        ArrayList&#60;String&#62; s = this.getAminoAcidSequence();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_126'/>
+126
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_126'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String aminoAcidSequence = &#34;&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_127'/>
+127
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_127'>1</a>
+<span>
+1. toString : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (String c : s) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_128'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            aminoAcidSequence += c + &#34; &#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_129'/>
+129
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_129'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_130'/>
+130
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_130'>1</a>
+<span>
+1. toString : mutated return of Object value for fi/samuel/dna/converter/logic/Protein::toString to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return aminoAcidSequence;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_131'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_132'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@d7109be_133'/>
+133
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_133'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_27'>27</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_27'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.doesNotReturnAminoAcidsWhenEmpty(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_43'>43</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_43'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getAminoAcidSequence<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_44'>44</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_44'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getAminoAcidSequence<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> Replaced integer division with multiplication &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_46'>46</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_46'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getAminoAcidSequence<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.doesNotReturnAminoAcidsWhenEmpty(fi.samuel.dna.converter.logic.ProteinTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getAminoAcidSequence<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.doesNotReturnAminoAcidsWhenEmpty(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_48'>48</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_48'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getAminoAcidSequence<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getAminoAcidSequence<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getAminoAcidSequence<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_50'>50</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_50'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getAminoAcidSequence<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_53'>53</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_53'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getAminoAcidSequence<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> Changed increment from -1 to 1 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_56'>56</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_56'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getAminoAcidSequence<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.doesNotReturnAminoAcidsWhenEmpty(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::getAminoAcidSequence to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_60'>60</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_60'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>expectedNucleobases<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>expectedNucleobases<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>expectedNucleobases<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_61'>61</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_61'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>expectedNucleobases<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_62'>62</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_62'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>expectedNucleobases<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_65'>65</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_65'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>expectedNucleobases<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_70'>70</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_70'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToString<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_73'>73</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_73'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToString<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToString to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_78'>78</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_78'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_79'>79</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_79'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.toStringGivesCorrectSequence(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_80'>80</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_80'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_81'>81</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_81'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.ttaCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_82'>82</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_82'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_83'>83</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_83'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.atgCorrespondsToMethionine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_84'>84</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_84'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_85'>85</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_85'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.atcCorrespondsToIsoleucine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_86'>86</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_86'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_87'>87</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_87'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.gtaCorrespondsToValine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_88'>88</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_88'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_89'>89</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_89'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_90'>90</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_90'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.accCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_91'>91</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_91'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.ccaCorrespondsToProline(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_92'>92</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_92'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.accCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_93'>93</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_93'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.accCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_94'>94</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_94'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.gacCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_95'>95</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_95'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.gcaCorrespondsToAlanine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_96'>96</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_96'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.gacCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_97'>97</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_97'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tatCorrespondsToTyrosine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_98'>98</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_98'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.gacCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_99'>99</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_99'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.cacCorrespondsToHistidine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_100'>100</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_100'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.gacCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_101'>101</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_101'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.caaCorrespondsToGlutamine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_102'>102</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_102'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.gacCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_103'>103</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_103'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.aatCorrespondsToAsparagine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_104'>104</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_104'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.gacCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_105'>105</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_105'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.aagCorrespondsToLysine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_106'>106</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_106'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.gacCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_107'>107</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_107'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.gacCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_108'>108</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_108'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.gagCorrespondsToGlutamicAcid(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_109'>109</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_109'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.gagCorrespondsToGlutamicAcid(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_110'>110</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_110'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tgcCorrespondsToCysteine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_111'>111</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_111'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tgcCorrespondsToCysteine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_112'>112</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_112'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tggCorrespondsToTryptophan(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_113'>113</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_113'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tggCorrespondsToTryptophan(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_114'>114</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_114'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.cgtCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_115'>115</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_115'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.cgtCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_116'>116</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_116'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.ggaCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_117'>117</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_117'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.ggaCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_119'>119</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_119'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>codonToAminoAcid<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.tagCorrespondsToStop(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::codonToAminoAcid to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_127'>127</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_127'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.toStringGivesCorrectSequence(fi.samuel.dna.converter.logic.ProteinTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@d7109be_130'>130</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@d7109be_130'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>fi.samuel.dna.converter.logic.ProteinTest.toStringGivesCorrectSequence(fi.samuel.dna.converter.logic.ProteinTest)</span></span> mutated return of Object value for fi/samuel/dna/converter/logic/Protein::toString to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>fi.samuel.dna.converter.logic.ProteinTest.tgtCorrespondsToCysteine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gcaCorrespondsToAlanine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gagCorrespondsToGlutamicAcid(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tctCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tatCorrespondsToTyrosine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gccCorrespondsToAlanine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tcgCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aacCorrespondsToAsparagine(fi.samuel.dna.converter.logic.ProteinTest) (14 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ccgCorrespondsToProline(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ctaCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aaaCorrespondsToLysine(fi.samuel.dna.converter.logic.ProteinTest) (6 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cccCorrespondsToProline(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.acgCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tagCorrespondsToStop(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gggCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gtgCorrespondsToValine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ctcCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (7 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ccaCorrespondsToProline(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ggtCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.agtCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gaaCorrespondsToGlutamicAcid(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tacCorrespondsToTyrosine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ggaCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ggcCorrespondsToGlycine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tgaEndsAminoAcidSequence(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aggCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tttCorrespondsToPhenylalanine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tgcCorrespondsToCysteine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gatCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.atgCorrespondsToMethionine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.agaCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cacCorrespondsToHistidine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gcgCorrespondsToAlanine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.acaCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aatCorrespondsToAsparagine(fi.samuel.dna.converter.logic.ProteinTest) (4 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cgcCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.agcCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cgaCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cggCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tgaCorrespondsToStop(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.atcCorrespondsToIsoleucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.aagCorrespondsToLysine(fi.samuel.dna.converter.logic.ProteinTest) (4 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ataCorrespondsToIsoleucine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.taaEndsAminoAcidSequence(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gacCorrespondsToAsparticAcid(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ttcCorrespondsToPhenylalanine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.attCorrespondsToIsoleucine(fi.samuel.dna.converter.logic.ProteinTest) (4 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tcaCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.caaCorrespondsToGlutamine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ttaCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.actCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest) (3 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ttgCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cttCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.accCorrespondsToThreonine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ccuCorrespondsToProline(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gtcCorrespondsToValine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.toStringGivesCorrectSequence(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.correctNumberOfAminoAcidsWhenNumberOfBasesInDnaSequenceIsNotDivisibleByThreeRemainderTwo(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.ctgCorrespondsToLeucine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tggCorrespondsToTryptophan(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gctCorrespondsToAlanine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.taaCorrespondsToStop(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tccCorrespondsToSerine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.correctNumberOfAminoAcidsWhenNumberOfBasesInDnaSequenceIsNotDivisibleByThree(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cagCorrespondsToGlutamine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gttCorrespondsToValine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.tagEndsAminoAcidSequence(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.catCorrespondsToHistidine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.cgtCorrespondsToArginine(fi.samuel.dna.converter.logic.ProteinTest) (1 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.doesNotReturnAminoAcidsWhenEmpty(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li><li>fi.samuel.dna.converter.logic.ProteinTest.gtaCorrespondsToValine(fi.samuel.dna.converter.logic.ProteinTest) (2 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.8
+
+</body>
+</html>
