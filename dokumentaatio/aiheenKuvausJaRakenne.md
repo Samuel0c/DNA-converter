@@ -22,4 +22,4 @@ DNA:n koostavat emäkset määrittävät MessengerRNA:n emäsjärjestyksen, joka
 
 ![luokkakaavio](Luokkakaavio.png)
 
-![sekvenssikaavio] (sKaavio.jpg)
+![sekvenssikaavio] (seqDiagram.jpg)
