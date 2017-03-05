@@ -13,6 +13,7 @@ public class Protein {
 
     private ArrayList<String> aminoAcidSequence;
     private final ArrayList<Base> tRnaSequence;
+    private int numberOfAminoAcidChains;
 
     /**
      * When creating new protein, the tRNA base sequence is stored and storage
@@ -27,6 +28,16 @@ public class Protein {
         for (Base c : tRNA.gettRnaSequence()) {
             this.tRnaSequence.add(c);
         }
+        this.init();
+    }
+
+    /**
+     * Gives the amino acid sequence corresponding to tRNA strand as list.
+     *
+     * @return Amino acid sequence as ArrayList.
+     */
+    public ArrayList<String> getAminoAcidSequence() {
+        return aminoAcidSequence;
     }
 
     /**
@@ -35,25 +46,21 @@ public class Protein {
      * Then the codon is converted into string representation of its bases.
      * After this, it is checked which amino acid does the triplet code for. The
      * amino acid (or stop) is added to list.
-     *
-     * @return Gives the amino acid sequence corresponding to tRNA strand as
-     * list.
      */
-    public ArrayList<String> getAminoAcidSequence() {
+    public void init() {
         if (this.aminoAcidSequence.isEmpty()) {
             int numberOfCodons = this.tRnaSequence.size() / 3;
             int index = 0;
             while (numberOfCodons > 0) {
                 ArrayList<Base> currentCodon = new ArrayList<>();
                 for (int counterToThree = 0; counterToThree < 3; counterToThree++) {
-                    currentCodon.add(tRnaSequence.get(index));
+                    currentCodon.add(this.tRnaSequence.get(index));
                     index++;
                 }
                 this.aminoAcidSequence.add(codonToAminoAcid(currentCodon));
                 numberOfCodons--;
             }
         }
-        return this.aminoAcidSequence;
     }
 
     private boolean expectedNucleobases(String currentCodon, String... acceptedCodons) {
@@ -122,12 +129,15 @@ public class Protein {
 
     @Override
     public String toString() {
-        ArrayList<String> s = this.getAminoAcidSequence();
         String aminoAcidSequence = "";
-        for (String c : s) {
-            aminoAcidSequence += c + " ";
+        for (String c : this.aminoAcidSequence) {
+            if (c.equals("STOP")) {
+                aminoAcidSequence += "\n";
+            } else {
+                aminoAcidSequence += c + " ";
+            }
         }
         return aminoAcidSequence;
     }
- 
+
 }
